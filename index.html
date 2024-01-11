@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Clock</title>
+</head>
+<body>
+
+<div id="clock" style="font-size: 48px;"></div>
+
+<script>
+function displayTime() {
+  const currentTime = new Date();
+  let hours = currentTime.getHours();
+  let minutes = currentTime.getMinutes();
+  let seconds = currentTime.getSeconds();
+
+  
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  const formattedTime = hours + ":" + minutes + ":" + seconds;
+
+  document.getElementById("clock").innerText = formattedTime;
+}
+
+setInterval(displayTime, 1000);
+
+displayTime();
+</script>
+
+</body>
+</html>
